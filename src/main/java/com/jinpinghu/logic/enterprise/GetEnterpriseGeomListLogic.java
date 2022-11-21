@@ -1,0 +1,31 @@
+package com.jinpinghu.logic.enterprise;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.EntityManager;
+
+import com.jinpinghu.db.dao.TbAgriculturalGreenhousesDao2;
+import com.jinpinghu.logic.BaseZLogic;
+import com.jinpinghu.logic.agriculturalGreenhouses.param.GetGreenhouseGeomListParam;
+
+import fw.jbiz.ext.json.ZSimpleJsonObject;
+import fw.jbiz.logic.ZLogicParam;
+
+public class GetEnterpriseGeomListLogic extends BaseZLogic {
+
+	@Override
+	protected boolean execute(ZLogicParam logicParam, ZSimpleJsonObject res, EntityManager em) throws Exception {
+		// TODO Auto-generated method stub
+		GetGreenhouseGeomListParam myParam = (GetGreenhouseGeomListParam)logicParam;
+		Integer enterpriseId = myParam.getEnterpriseId();
+		
+		TbAgriculturalGreenhousesDao2 greenhousesDao = new TbAgriculturalGreenhousesDao2(em);
+		
+		List<Map<String,Object>> resultList = greenhousesDao.getEnterpriseGeomList(enterpriseId);
+		
+		res.add("status", 1).add("msg", "操作成功").add("result", resultList);
+		return true;
+	}
+
+}

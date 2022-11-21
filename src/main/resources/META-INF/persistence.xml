@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="jinpinghu" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>com.jinpinghu.db.dao.TbInspectionItem</class><class>com.jinpinghu.db.dao.TbInspectionType</class><class>com.jinpinghu.db.dao.TbResInspectionCompleteFile</class><class>com.jinpinghu.db.dao.TbInspectionComplete</class><class>com.jinpinghu.db.dao.TbInspection</class><class>com.jinpinghu.db.dao.TbInspectionPoint</class><class>com.jinpinghu.db.dao.TbResInspectionFile</class><class>com.jinpinghu.db.bean.TbShoppingCarBook</class><class>com.jinpinghu.db.bean.TbReceivingAddress</class><class>com.jinpinghu.db.bean.TbToolOrderBook</class><class>com.jinpinghu.db.bean.TbCart</class><properties>
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+		<property name="hibernate.connection.url"
+				value="jdbc:mysql://118.178.192.43:30610/nongzi_yiwu?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;useSSL=false&amp;serverTimezone=GMT%2B8" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="123456" />
+		<!-- 	<property name="hibernate.connection.url"
+				value="jdbc:mysql://124.71.206.168:20213/jinpinghu?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;useSSL=false&amp;serverTimezone=GMT%2B8" />
+			<property name="hibernate.connection.username" value="wlzx" />
+			<property name="hibernate.connection.password" value="WLzx@2021" /> -->
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="show_sql" value="true" />
+
+			<!-- c3p0 连接池配置 -->
+			<property name="hibernate.connection.provider_class"
+				value="org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider" />
+			<property name="hibernate.c3p0.min_size" value="5" />
+		   <property name="hibernate.c3p0.max_size" value="20" />
+		   <property name="hibernate.c3p0.maxIdleTime" value="1800" />
+		   <property name="hibernate.c3p0.max_statements" value="1000" />
+		   <property name="hibernate.c3p0.timeout" value="3600" />
+		   <property name="hibernate.c3p0.idle_test_period" value="600" />
+		   <property name="hibernate.c3p0.acquire_increment" value="5" />
+		   <property name="hibernate.c3p0.validate" value="true" />
+		   <property name="hibernate.c3p0.initialPoolSize" value="10" /> 
+		   <property name="hibernate.c3p0.idleConnectionTestPeriod" value="1800" />
+
+		</properties>
+
+	</persistence-unit>
+	
+	<persistence-unit name="localhost" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<properties>
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url"
+				value="jdbc:mysql://118.178.192.43:30610/nongzi_yiwu?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;useSSL=false&amp;serverTimezone=GMT%2B8" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="123456" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="show_sql" value="true" />
+
+			<!-- c3p0 连接池配置 -->
+			<property name="hibernate.connection.provider_class"
+				value="org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider" />
+			<property name="hibernate.c3p0.min_size" value="1" />
+			<property name="hibernate.c3p0.max_size" value="5" />
+			<property name="hibernate.c3p0.maxIdleTime" value="60" />
+			<property name="hibernate.c3p0.max_statements" value="100" />
+			<property name="hibernate.c3p0.timeout" value="120" />
+			<property name="hibernate.c3p0.idle_test_period" value="120" />
+			<property name="hibernate.c3p0.acquire_increment" value="1" />
+			<property name="hibernate.c3p0.validate" value="true" />
+
+
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
